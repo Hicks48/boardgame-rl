@@ -1,6 +1,6 @@
 # Reinforcement Learning for Boardgames
 
-## Background
+## Background and Theory
 This section provides overview on Reinforcement Learning and the specific algorithms used on projects of this repository.
 
 ### What is Reinforcement Learning?
@@ -8,5 +8,15 @@ In Reinforcement Learning setup an agent takes actions in an environment with a 
 
 TODO: Make image here.
 
+### Markov Decision Process
+Reinforcement Learning environment can be modeled as a Markov Decision Process. Markov Decision Process consists of states, actions and transitions. Each state has a set of actions which are available at the state. An action has a set of transitions one of which will occur as a result of the action. Transition has a probability that it will occur and a reward.
+
+TODO: Make image here.
+
+### Modeling the reward
+The agents goal is to maximize the reward overtime steps. 
+
 ### Q-Learning
 Q-Learning algorithm tries to find an optimal policy $\pi_*(s, a)$.
+
+
