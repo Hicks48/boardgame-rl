@@ -14,7 +14,11 @@ Reinforcement Learning environment can be modeled as a Markov Decision Process. 
 TODO: Make image here.
 
 ### Modeling the reward
-The agents goal is to maximize the reward overtime steps. 
+The agents goal is to maximize the reward overtime steps. In most cases rewards which are gained imidiately are deemed to be more valuable than rewards to be gained later. To include this in the model a discount factor $\gamma$ can be introduced to the calculation of predicting future rewards.
+
+$$
+R_t = r_t + \gamma * r_{t+1} + \gamma^2 * r_{t+2} + \gamma^3 * r_{t+3} + ...
+$$
 
 ### Q-Learning
 Q-Learning algorithm tries to find an optimal policy $\pi_*(s, a)$.
