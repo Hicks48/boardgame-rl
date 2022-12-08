@@ -1,0 +1,12 @@
+builds
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so__pycache__
+
+# OSX
+.DS_Store
