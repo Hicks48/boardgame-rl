@@ -14,10 +14,13 @@ class QTableAgent:
         # In inference always return the best value.
         return np.argmax(self.q_table[state])
 
-    def select_train_action(self, state, hyper_parameters):
+    def select_train_action(self, state, hyper_parameters, i_episode):
         # Check if should exploit current policy and return best value if should exploit.
-        if hyper_parameters.epsilon_greedy.sample_should_exploit():
-            return np.argmax(self.q_table[state])
+        if hyper_parameters.epsilon_greedy.sample_should_exploit(i_episode):
+            # Exploit is a random action of the action with best Q value
+            # in most cases there is one with best value.
+            # In start there are however multiple.
+            return np.random.choice(np.flatnonzero(np.isclose(self.q_table[state], np.max(self.q_table[state]))))
 
         # Return random action as an exploration action.
         return np.random.choice(len(self.q_table[state]))

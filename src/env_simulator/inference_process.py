@@ -9,5 +9,5 @@ class InferenceProcess:
     def observe_transition(self, transition):
         self.reward_accumulator.register_reward(transition.reward)
 
-    def on_end_episode(self):
+    def on_end_episode(self, i_episode):
         self.reward_accumulator.end_episode()

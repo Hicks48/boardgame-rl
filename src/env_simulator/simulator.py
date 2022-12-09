@@ -24,7 +24,7 @@ def simulate(env, agent_process, number_of_episodes, max_steps = -1, show_progre
             
             # Check for episode termination conditions.
             if terminated or truncated or was_max_step_count_reached:
-                agent_process.on_end_episode()
+                agent_process.on_end_episode(i_episode)
                 has_episode_ended = True
 
             # Next state is new state for next step.
